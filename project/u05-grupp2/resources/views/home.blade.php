@@ -4,52 +4,56 @@
 <!-- html tag, name -->
 
 @section('content')
-    <div>
-        <h1 class="h1-home"><i class="fa fa-play" aria-hidden="true"></i>New movies</h1>
-        <p class="p-home"> check out and read more about all the latest movies</p>
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
-                <li data-target="#myCarousel" data-slide-to="4"></li>
-            </ol>
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-                <div class="item active">
+    <div class="container my-5" style="max-width: 300px">
+        <form action="/search/query" method="GET" class="d-flex"> {{--Search Bar--}}
+            @csrf
+            <input 
+                class="form-control me-sm-2" 
+                type="text" 
+                name="search" 
+                placeholder="Search...">
+            <button 
+                class="btn btn-light my-2 my-sm-0" 
+                type="submit">
+                <i class="fa fa-search" style="font-size:24px"></i>
+            </button>
+        </form>
+    </div>
 
-                    <img src="https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/nvxrQQspxmSblCYDtvDAbVFX8Jt.jpg"
-                        alt="Don't look up movie" class="imgMovie" style="width:100%; filter:brightness(90%);">
+    {{-- Carousel --}}
+      <div class="wrapper">
+            <div class="owlcarousel owl-carousel">
+                <div class="card card-1">
+                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/k5rTAIhFZrtkhSgFKfy2d8Q2d9N.jpg"
+                        alt="Card image cap">
                 </div>
-
-                <div class="item">
-                    <img src="https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/iQFcwSGbZXMkeyKrxbPnwnRo5fl.jpg"
-                        alt="The Spiderman movie" class="imgMovie" style="width:100%; filter:brightness(90%);">
+                <div class="card card-2">
+                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2y6rBVQ11iJMAeTpXiKYwQRa3Xs.jpg"
+                        alt="Card image cap">
                 </div>
-
-                <div class="item">
-                    <img src="https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/r2GAjd4rNOHJh6i6Y0FntmYuPQW.jpg"
-                        alt="James Bond Movie" class="imgMovie" style="width:100%; filter:brightness(90%);">
+                <div class="card card-3">
+                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2VAuRfbZtuGBzOhBAj0gcyDC5y5.jpg"
+                        alt="Card image cap">
                 </div>
-
-                <div class="item">
-                    <img src="https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/srYya1ZlI97Au4jUYAktDe3avyA.jpg"
-                        alt="Wonder Woman Movie" class="imgMovie" style="width:100%; filter:brightness(90%);">
+                <div class="card card-4">
+                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uF0vH6dO04BGpiqwGHuca50bzdi.jpg"
+                        alt="Card image cap">
                 </div>
-
-                <div class="item">
-                    <img src="https://www.themoviedb.org/t/p/w1066_and_h600_bestv2/LTOZB3N1kYA2Xu1lW114HFA1o8.jpg"
-                        alt="Cruella Movie" class="imgMovie" style="width:100%; filter:brightness(90%);">
+                <div class="card card-5">
+                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hATFm1xAXvHYgjZ2JLZyfSSun0e.jpg"
+                        alt="Card image cap">
+                </div>
+                <div class="card card-5">
+                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/oGTXC3lOkmoDpCOdDtjNNmvYdVg.jpg"
+                        alt="Card image cap">
+                </div>
+                <div class="card card-5">
+                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/8VDxY0nMVaepmLPCoZbbzn9DoGZ.jpg"
+                        alt="Card image cap">
                 </div>
             </div>
-
         </div>
-
-        <h2 class="h1-home"><i class="fa fa-film" aria-hidden="true"></i>Latest movies and trailers</h2>
-
-
+     
         <div class="card-group">
             <div class="card">
                 <img class="card-img-top"
@@ -130,38 +134,7 @@
             </div>
         </div>
 
-        <div class="wrapper">
-            <div class="owlcarousel owl-carousel">
-                <div class="card card-1">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/k5rTAIhFZrtkhSgFKfy2d8Q2d9N.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-2">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2y6rBVQ11iJMAeTpXiKYwQRa3Xs.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-3">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2VAuRfbZtuGBzOhBAj0gcyDC5y5.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-4">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uF0vH6dO04BGpiqwGHuca50bzdi.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-5">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hATFm1xAXvHYgjZ2JLZyfSSun0e.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-5">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/oGTXC3lOkmoDpCOdDtjNNmvYdVg.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-5">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/8VDxY0nMVaepmLPCoZbbzn9DoGZ.jpg"
-                        alt="Card image cap">
-                </div>
-            </div>
-        </div>
+      
 
       <script>
           $(".owlcarousel").owlCarousel({

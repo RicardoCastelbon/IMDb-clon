@@ -17,7 +17,7 @@
                         <p class="text-secondary text-center">{{ $movie->timestamps }}</p>
                     </div>
                     <div class="col-md-10">
-                        <a class="float-left" href="{{route('movies.show-from-watchlist', $movie->id)}}">
+                        <a class="float-left" href="{{route('show.from.watchlist', ['id'=> $movie->id]) }}">
                             <h5 class="card-title">{{ $movie->title }} (<span>{{ $movie->year }}</span>)</h5>                            
                         </a>
                         <p class="float-left mt-3"> {{ $movie->public }} | {{ $movie->rating }} <i class="text-warning fa fa-star"></i>| {{ $movie->category}}</p> 

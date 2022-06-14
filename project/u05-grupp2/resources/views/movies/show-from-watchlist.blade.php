@@ -29,10 +29,10 @@
         
         <div class="row text-center mt-3">
             <div class="col-md my-auto">
-                <img class="img-fluid" style="width: 250px" src="{{ $movie->img_url }}" alt="">
+                <img class="img-fluid mx-auto" style="width: 250px" src="{{ $movie->imageurl }}" alt="">
             </div>
             <div class="col-md mt-3">
-                <iframe width="100%" height="315" src="{{ $movie->trailer_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="315" src="{{ $movie->trailerurl }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="row mt-3">
@@ -73,9 +73,8 @@
 
         <div class="row mt-3">
            <h3>Reviews</h3>
-           @auth
-               
-           <form action="{{ route('movies.reviews.store', $movie->id) }}" method="POST">
+           @auth 
+           <form action="{{ route('reviews.store', $movie->id) }}" method="POST">
                 @csrf
                 <input type="text" name="title" class="form-control" style="width: 200px" placeholder="Review heading">
                 <input type="number" name="rating" class="form-control mt-4" style="width: 70px" placeholder="Rating">
