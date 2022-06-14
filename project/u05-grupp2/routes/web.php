@@ -24,43 +24,27 @@ use App\Http\Controllers\ReviewController;
 |
 */
 
-/*Route::get('/', function () {
-    return view('home');
-});*/
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/genre', [PagesController::class, 'genre']);
-// Route::get('/watchlist', [PagesController::class, 'watchlist']);
-// Route::get('/mylists', [PagesController::class, 'mylists']);
-// Route::get('/createlist', [PagesController::class, 'createlist']);
-// Route::get('/top_rated', [PagesController::class, 'top_rated']);
-// Route::get('/user/{id}', [PagesController::class, 'index']);
 
-/*Item page*/
-//Routes for CRUD
-//Route::resource('movies', MovieController::class)->names('movies');
-//Route::get('admin', [DashboardadminController::class, 'index'])->name('admin');
 Route::resource('users', UserController::class)->names('users');
-// Route::resource('actors', ActorController::class)->names('actors');
 Auth::routes(); //Login logout and register
 Route::resource('roles', RoleController::class)->names('roles');
 
 //Movie Routes
 //Get 1 movie
-//Get All the movies
-Route::get('movies',[MovieController::class, 'THE FUNCTION IN THE CONTROLLER']);
-Route::get('movie/{id}', [MovieController::class, 'THE FUNCTION IN THE CONTROLLER']);
+Route::get('movies/{id}', [MovieController::class, 'showFromWatchlist'])->name('show.from.watchlist');
+
 
 //Watchlist
 Route::get('add-to-watchlist/{movieid}', [WatchlistController::class, 'addToWatchlist'])->name('addToWatchlist');
-Route::get('/watchlist/{id}',[WatchlistController::class, 'show'])->name('displayWatchlist');
+Route::get('/watchlist/{id}', [WatchlistController::class, 'show'])->name('displayWatchlist');
 Route::get('/delete-watchlist-item/{id}', [WatchlistController::class, 'destroy'])->name('delete.watchlist.item');
-Route::get('movie/{id}', [MovieController::class, 'showFromWatchlist'])->name('show.from.watchlist');
+
 
 //Reviews
 Route::resource('reviews', ReviewController::class);
-Route::resource('movies.reviews', ReviewController::class)->shallow();
-
+//Route::resource('movies.reviews', ReviewController::class)->shallow();
 
 //Route for searchbar
-Route::get('/search/query',[SearchController::class, 'query']);
+Route::get('/search/query', [SearchController::class, 'query']);

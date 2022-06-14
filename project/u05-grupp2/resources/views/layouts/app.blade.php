@@ -18,6 +18,7 @@
         <!-- Styles -->
         {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
         <link rel="stylesheet" href="{{ URL::asset('css/main.css') }}">
+        <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>

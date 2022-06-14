@@ -43,13 +43,13 @@ class ReviewController extends Controller
      */
     public function store(Request $request, Movie $movie)
     {
-        dd('hola');
+        dd($movie->id);
         $request->validate(['title' => 'required']);
         $request->validate(['content' => 'required']);
         $request->validate(['rating' => 'required']);
 
-        $review = Review::create([
-            'user_id' => Auth::user()->id,         
+        Review::create([
+            'user_id' => Auth::user()->id,
             'movie_id' => $movie->id,
             'title' => $request->title,
             'content' => $request->content,
@@ -112,7 +112,7 @@ class ReviewController extends Controller
         if ($review->user->id != Auth::user()->id) {
             abort(403);
         }
-        if($review->user->role_id === 1){
+        if ($review->user->role_id === 1) {
             $review->delete();
         }
         $review->delete();
