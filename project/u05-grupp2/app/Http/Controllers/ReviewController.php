@@ -41,22 +41,23 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Movie $movie)
+    public function store(Request $request)
     {
-        dd($movie->id);
+         /* dd($movie_id);  */
         $request->validate(['title' => 'required']);
         $request->validate(['content' => 'required']);
         $request->validate(['rating' => 'required']);
+        
 
         Review::create([
             'user_id' => Auth::user()->id,
-            'movie_id' => $movie->id,
+            'movie_id' => $request->movie_id,
             'title' => $request->title,
             'content' => $request->content,
             'rating' => $request->rating,
         ]);
         return back();
-        //return redirect('/reviews');
+        
     }
 
     /**

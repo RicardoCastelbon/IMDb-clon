@@ -73,21 +73,20 @@
 
         <div class="row mt-3">
            <h3>Reviews</h3>
-           @auth 
-           <form action="{{ route('reviews.store', $movie->id) }}" method="POST">
+           @auth  
+           <form action="{{ route('add-review') }}" method="POST">
                 @csrf
+                <input type="hidden" name="movie_id" value="{{ $movie->id }}" />
                 <input type="text" name="title" class="form-control" style="width: 200px" placeholder="Review heading">
                 <input type="number" name="rating" class="form-control mt-4" style="width: 70px" placeholder="Rating">
                 <textarea type="text" name="content" class="form-control mt-4" rows="10" placeholder="Review content"></textarea>
                 <button type="submit" class="btn btn-primary mt-3">Post Review</button>
             </form> 
-
             @endauth
         </div>
-
             @if (count($movie->reviews))
                @foreach ($movie->reviews as $review)
-                  <div class="card mt-3">
+                <div class="card mt-3">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-11">          
@@ -100,19 +99,18 @@
                             @auth
                                 
                             <div class="col-md-1 d-flex align-items-center">
-                                    <form action="{{ route('reviews.destroy', $review->id) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger">
-                                        <i class="far fa-trash-alt"></i>
-                                        </button>
-                                    </form>
-                                    </div>
+                                <form action="{{ route('reviews.destroy', $review->id) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger">
+                                    <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </form>
                             </div>
-
-                             @endauth
-
                         </div>
+
+                            @endauth
+
                     </div>
                 </div> 
                @endforeach
