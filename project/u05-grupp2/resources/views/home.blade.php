@@ -23,38 +23,18 @@
     {{-- Carousel --}}
       <div class="wrapper">
             <div class="owlcarousel owl-carousel">
+                @foreach ($movies as $movie)
                 <div class="card card-1">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/k5rTAIhFZrtkhSgFKfy2d8Q2d9N.jpg"
+                    <a href="{{route('show.from.watchlist', ['id'=> $movie->id]) }}">
+                        <img src="{{ $movie->imageurl }}"
                         alt="Card image cap">
+                    </a>
                 </div>
-                <div class="card card-2">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2y6rBVQ11iJMAeTpXiKYwQRa3Xs.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-3">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2VAuRfbZtuGBzOhBAj0gcyDC5y5.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-4">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/uF0vH6dO04BGpiqwGHuca50bzdi.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-5">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/hATFm1xAXvHYgjZ2JLZyfSSun0e.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-5">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/oGTXC3lOkmoDpCOdDtjNNmvYdVg.jpg"
-                        alt="Card image cap">
-                </div>
-                <div class="card card-5">
-                    <img src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/8VDxY0nMVaepmLPCoZbbzn9DoGZ.jpg"
-                        alt="Card image cap">
-                </div>
+                @endforeach
             </div>
         </div>
      
-        <div class="card-group">
+       {{--  <div class="card-group">
             <div class="card">
                 <img class="card-img-top"
                     src="https://www.themoviedb.org/t/p/w600_and_h900_bestv2/yTZIJL7UXuuJ7SsgBdqXt74qGBn.jpg"
@@ -132,7 +112,7 @@
                 <a class="btn btn-primary" href="https://www.youtube.com/watch?v=8YjFbMbfXaQ" role="button"><i
                         class="fa fa-play" aria-hidden="true"></i>Trailer</a>
             </div>
-        </div>
+        </div> --}}
 
       
 
