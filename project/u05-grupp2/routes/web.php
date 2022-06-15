@@ -45,6 +45,8 @@ Route::get('/delete-watchlist-item/{id}', [WatchlistController::class, 'destroy'
 //Reviews
 Route::resource('reviews', ReviewController::class);
 //Route::resource('movies.reviews', ReviewController::class)->shallow();
+Route::post('/review/add', [ReviewController::class, 'store'])->name('add-review')->middleware('auth');
+
 
 //Route for searchbar
 Route::get('/search/query', [SearchController::class, 'query']);
