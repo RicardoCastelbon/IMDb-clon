@@ -56,7 +56,7 @@
                 <div class="mt-4 d-flex align-items-center">
                 <strong class="me-3">Actors</strong>
                  <ul class="list-group list-group-horizontal ">
-                    <li class="list-group-item text-primary">{{ $movie->actors }}</li>
+                    <li class="list-group-item text-primary">{{ $movie->actor }}</li>
                 </ul> 
                 </div>
             </div>
@@ -83,7 +83,7 @@
                 <textarea type="text" name="content" class="form-control mt-4" rows="10" placeholder="Review content"></textarea>
                 <button type="submit" class="btn btn-primary mt-3">Post Review</button>
             </form> 
-            
+
             @endauth
         </div>
             @if (count($movie->reviews))
