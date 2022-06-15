@@ -74,6 +74,7 @@
         <div class="row mt-3">
            <h3>Reviews</h3>
            @auth  
+
            <form action="{{ route('add-review') }}" method="POST">
                 @csrf
                 <input type="hidden" name="movie_id" value="{{ $movie->id }}" />
@@ -82,6 +83,7 @@
                 <textarea type="text" name="content" class="form-control mt-4" rows="10" placeholder="Review content"></textarea>
                 <button type="submit" class="btn btn-primary mt-3">Post Review</button>
             </form> 
+            
             @endauth
         </div>
             @if (count($movie->reviews))
