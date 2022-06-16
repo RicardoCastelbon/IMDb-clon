@@ -15,7 +15,7 @@
 
 
 ## General Information
-- The project purpose is to create a fullstack web application using the technologies described down below. To complete the project was neccesary to learn the laravel framework, the MVC architecture, relational databases like mysql and the container system that Docker provides.
+- The project purpose is to create a fullstack web application using the technologies described down below. To complete the project was necessary to learn the laravel framework, the MVC architecture, relational databases and the container system that Docker provides.
 
 
 ## Technologies Used
