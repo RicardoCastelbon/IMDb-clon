@@ -68,7 +68,7 @@ Project is: _no longer being worked on_
 ## Room for Improvement
 - Create several types of list (favorites, action, drama...)
 - Filter movies by actor, category...
-- Add Tv-shows also
+- Add Tv-shows
 
 
 ## Acknowledgements
